@@ -1,0 +1,32 @@
+.card-product
+  padding: 20px 10px 10px
+  position: relative
+  &__image, &__text, &__buy-button
+    margin-bottom: 5px
+  &__buy-button
+    width: 100%
+    font-size: 12px!important
+    padding: 4.5px!important
+    line-height: 15px
+  &__price
+    font-size: 14px
+    line-height: 13px
+  &-actions
+    position: absolute
+    top: 0
+    right: 0
+    transform: translateX(50%)
+    flex-direction: column
+    opacity: 0
+    .btn
+      border-radius: 50%
+      width: 36px
+      height: 36px
+      padding: 0
+      background-color: #ededed
+      &:not(:last-child)
+        margin-bottom: 6px
+      &:hover
+        box-shadow: none
+  &:hover &-actions
+    opacity: 1

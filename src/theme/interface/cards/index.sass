@@ -1,0 +1,27 @@
+@import "_add"
+@import "_product"
+
+.card-product, .card-add
+  max-width: 160px
+  background-color: $secondary-color
+  border-radius: 4px
+  flex-direction: column
+  &__text
+    $max-lines: 2
+    $line-height: 21px
+    font-size: 16px
+    line-height: $line-height
+    text-align: center
+    font-weight: 700
+    max-height: calc( $line-height * $max-lines )
+    height: 100%
+    width: 100%
+    // Троеточие в конце, при переполнении контента
+    overflow: hidden
+    text-overflow: ellipsis
+
+.card-product__image, .card-add__button
+  // Не паддингом, потому что при изменении ширины карточки - потеряет форму круга
+  height: 120px
+  width: 120px
+  border-radius: 50%

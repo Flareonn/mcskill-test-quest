@@ -1,0 +1,57 @@
+input, select
+  font-size: 18px
+input
+  appearance: none
+  color: $text-color
+  &:not([type="search"])
+    padding: 4.5px 16px
+    @include control-border
+  &[type="checkbox"], &[type="radio"]
+    display: none
+    + label
+      cursor: pointer
+      height: 34px
+      width: 34px
+      padding: 0
+    &:checked + label
+      border-color: $text-color
+  &[type="search"]::-webkit-search-cancel-button
+    appearance: none
+    display: none
+  &::placeholder
+    color: $text-color
+
+select
+  @include control-border
+  padding: 4.5px 16px
+  font-weight: 400
+  appearance: none
+  outline: none
+.base-select
+  position: relative
+  $width-arrow: 15px
+  $padding-right-arrow: 21px
+  select
+    width: inherit
+    user-select: none
+    padding-right: calc($padding-right-arrow + ($width-arrow * 2))
+  &::after
+    content: ""
+    width: $width-arrow
+    height: 8px
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: $padding-right-arrow
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6329 0.164121C14.852 0.383789 14.852 0.944387 14.6329 1.16406L8.14891 7.66406C7.92978 7.88374 7.37051 7.88374 7.15138 7.66406L0.667237 1.16406C0.448111 0.944387 0.448185 0.384071 0.667312 0.164404C0.886438 -0.0552639 1.44572 -0.0552639 1.66485 0.164404L7.65014 6.36874L13.6354 0.164404C13.8545 -0.0552639 14.4138 -0.0555463 14.6329 0.164121Z' fill='%231C1A1D' fill-opacity='0.8'/%3E%3C/svg%3E%0A")
+
+.base-search
+  @include control-border
+  overflow: hidden
+  &-submit
+    padding: 7px 0px 7px 17.5px
+  input[type="search"]
+    padding: 7px 8px
+    width: 100%
+    font-size: 14px

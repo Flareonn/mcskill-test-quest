@@ -1,0 +1,35 @@
+@mixin btn-styles($usual-bgc, $bgc)
+  border-radius: 4px
+  font-size: 14px
+  line-height: 18px
+  user-select: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 7px 8px
+  background-color: $usual-bgc
+  &:hover, &:active, &.active
+    background-color: $bgc
+
+.btn
+  @include btn-styles($primary-color, $active-color)
+  padding: 8px 38.5px
+  color: $text-color
+  &:hover, &:active, &.active
+    color: #fff
+  &:hover:active
+    box-shadow: none
+  &:hover
+    box-shadow: 0px 0px 8px $active-color
+  &_primary
+    @include btn-styles(#fff, #fff)
+    @include control-border
+  &_success
+    @include btn-styles($successful-color, $successful-color)
+    color: #fff
+  &_info
+    @include btn-styles($info-color, $info-color)
+    color: #fff
+  &_secondary
+    @include btn-styles($active-color, $active-color)
+    color: #fff

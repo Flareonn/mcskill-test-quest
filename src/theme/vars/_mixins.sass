@@ -1,0 +1,30 @@
+@mixin icon-size($size-w, $size-h: -1px)
+  @if $size-h != -1px
+    width: $size-w
+    height: $size-h
+    &::after
+      height: $size-h
+      width: $size-w
+  @else
+    width: $size-w
+    height: $size-w
+    &::after
+      height: $size-w
+      width: $size-w
+
+@mixin build-mask($size-w, $size-h, $path)
+  @include icon-size($size-w, $size-h)
+  &::after
+    mask: url($path) no-repeat center
+
+@mixin control-border
+  border: 1px solid transparentize($main-color, 0.84)
+  border-radius: 4px
+
+@mixin make-grid($columns, $colum-gap, $row-gap)
+  > *
+    flex: 0 0 calc((100% / $columns) - ($colum-gap - ($colum-gap / $columns)))
+    &:not(:nth-last-child(-n+#{$columns}))
+      margin-bottom: $row-gap
+    &:not(:nth-child(#{$columns}n+#{$columns}))
+      margin-right: $colum-gap

@@ -1,0 +1,34 @@
+.shop
+  &-header
+    &-top
+      padding: 16px 0px
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+    &-under
+      padding: 24px 30px
+    &__change-server
+      margin: 0 auto
+      i
+        margin-left: 6px
+    &-essence, &-search
+      margin-bottom: 10px
+    &-essence .btn
+      min-width: 160px
+    &-search
+      width: 100%
+      > .base-search
+        width: inherit
+        margin-right: 8px
+      &__filter
+        position: relative
+        &.active
+          border-bottom-right-radius: 0px
+          border-bottom-left-radius: 0px
+    &-categories
+      position: relative
+      width: 100%
+  &-main
+    padding: 0px 30px
+    background-color: #fff
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 20px
